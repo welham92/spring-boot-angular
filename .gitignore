@@ -1,0 +1,22 @@
+.DS_Store
+*.class
+*_.java
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# project files
+#Idea
+.idea/
+*.iml
+bin/
+.factorypath
+
+node_modules/
+
+target/
+
+
+
