@@ -3,6 +3,14 @@ import {Subject} from "rxjs/internal/Subject";
 import {ProductOrders} from "../models/product-orders.model";
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from "@angular/core";
+import { HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+    headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Basic ' + btoa('user:password')
+    })
+};
 
 @Injectable()
 export class EcommerceService {
@@ -27,15 +35,15 @@ export class EcommerceService {
     }
 
     getAllProducts() {
-        return this.http.get(this.productsUrl);
+        return this.http.get(this.productsUrl, httpOptions);
     }
 
     saveOrder(order: ProductOrders) {
-        return this.http.post(this.ordersUrl, order);
+        return this.http.post(this.ordersUrl, order, httpOptions);
     }
 
     getPricesMode() {
-        return this.http.get(this.pricesModeUrl);
+        return this.http.get(this.pricesModeUrl, httpOptions);
     }
 
     set SelectedProductOrder(value: ProductOrder) {
