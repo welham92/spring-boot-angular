@@ -40,6 +40,7 @@ public interface ProductService {
                 .sorted(Comparator.comparing(Product::getPrice)).collect(Collectors.toList());
         DoubleStream sortedPrices = sortedProducts.stream().mapToDouble(Product::getPrice);
         if (sortedProducts.size() > 0) {
+            // Maths dictates that the below warnings can be ignored (hopefully)...
             return sortedProducts.size() % 2 == 0 ?
                     sortedPrices.skip(sortedProducts.size() / 2 - 1).limit(2).average().getAsDouble() :
                     sortedPrices.skip(sortedProducts.size() / 2).findFirst().getAsDouble();

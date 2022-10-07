@@ -18,22 +18,22 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping(value = { "", "/" })
+    @GetMapping(value = {"", "/"})
     public @NotNull Iterable<Product> getProducts() {
         return productService.getAllProducts();
     }
 
-    @GetMapping(value = { "", "/mean" })
+    @GetMapping(value = {"", "/mean"})
     public @NotNull Double getMean() {
         return productService.getMean();
     }
 
-    @GetMapping(value = { "", "/median" })
+    @GetMapping(value = {"", "/median"})
     public @NotNull Double getMedian() {
         return productService.getMedian();
     }
 
-    @GetMapping(value = { "", "/mode" })
+    @GetMapping(value = {"", "/mode"})
     public @NotNull Double getMode() {
         return productService.getMode();
     }
