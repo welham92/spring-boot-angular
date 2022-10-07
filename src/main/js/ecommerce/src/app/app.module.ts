@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {EcommerceComponent} from './ecommerce/ecommerce.component';
 import {ProductsComponent} from './ecommerce/products/products.component';
 import {ShoppingCartComponent} from './ecommerce/shopping-cart/shopping-cart.component';
+import {PricesModeComponent} from './ecommerce/prices-mode/prices-mode.component';
 import {OrdersComponent} from './ecommerce/orders/orders.component';
 import {EcommerceService} from "./ecommerce/services/EcommerceService";
 
@@ -16,6 +17,7 @@ import {EcommerceService} from "./ecommerce/services/EcommerceService";
         EcommerceComponent,
         ProductsComponent,
         ShoppingCartComponent,
+        PricesModeComponent,
         OrdersComponent
     ],
     imports: [

@@ -8,6 +8,7 @@ import {Injectable} from "@angular/core";
 export class EcommerceService {
     private productsUrl = "/api/products/";
     private ordersUrl = "/api/orders/";
+    private pricesModeUrl = "/api/products/mode";
 
     private productOrder: ProductOrder;
     private orders: ProductOrders = new ProductOrders();
@@ -31,6 +32,10 @@ export class EcommerceService {
 
     saveOrder(order: ProductOrders) {
         return this.http.post(this.ordersUrl, order);
+    }
+
+    getPricesMode() {
+        return this.http.get(this.pricesModeUrl);
     }
 
     set SelectedProductOrder(value: ProductOrder) {
