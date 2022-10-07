@@ -5,8 +5,10 @@ import com.baeldung.ecommerce.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 
+@EnableCaching
 @SpringBootApplication
 public class EcommerceApplication {
 

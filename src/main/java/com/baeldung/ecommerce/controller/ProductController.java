@@ -2,6 +2,7 @@ package com.baeldung.ecommerce.controller;
 
 import com.baeldung.ecommerce.model.Product;
 import com.baeldung.ecommerce.service.ProductService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @Cacheable("allProducts")
     @GetMapping(value = {"", "/"})
     public @NotNull Iterable<Product> getProducts() {
         return productService.getAllProducts();
